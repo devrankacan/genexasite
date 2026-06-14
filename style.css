@@ -538,7 +538,7 @@ footer hr { border-color: rgba(255,255,255,.15); margin: 16px 0; }
 }
 
 @media (max-width: 768px) {
-  .header-top { display: none; }
+  .header-top { display: block; }
   .logo img { height: 38px; }
 
   .nav-menu {
