@@ -15,22 +15,36 @@ function initReveal() {
 // ===== MOBILE BURGER =====
 const burger = document.getElementById('burger');
 const navMenu = document.getElementById('navMenu');
+
+function closeNav() {
+  navMenu?.classList.remove('open');
+  burger?.classList.remove('active');
+  document.querySelectorAll('.has-dropdown').forEach(d => d.classList.remove('open'));
+}
+
 burger?.addEventListener('click', () => {
-  navMenu.classList.toggle('open');
+  const isOpen = navMenu.classList.toggle('open');
   burger.classList.toggle('active');
+  if (!isOpen) {
+    document.querySelectorAll('.has-dropdown').forEach(d => d.classList.remove('open'));
+  }
 });
+
 document.querySelectorAll('.has-dropdown > a').forEach(link => {
   link.addEventListener('click', e => {
     if (window.innerWidth <= 768) {
       e.preventDefault();
-      link.parentElement.classList.toggle('open');
+      const parent = link.parentElement;
+      const isOpen = parent.classList.contains('open');
+      document.querySelectorAll('.has-dropdown').forEach(d => d.classList.remove('open'));
+      if (!isOpen) parent.classList.add('open');
     }
   });
 });
+
 document.addEventListener('click', e => {
   if (!e.target.closest('#navMenu') && !e.target.closest('#burger')) {
-    navMenu?.classList.remove('open');
-    burger?.classList.remove('active');
+    closeNav();
   }
 });
 
