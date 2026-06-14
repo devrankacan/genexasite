@@ -2,19 +2,19 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --primary: #1a5276;
-  --primary-dark: #154360;
-  --accent: #2e86c1;
-  --accent-light: #d6eaf8;
-  --text: #1c2833;
-  --text-muted: #5d6d7e;
+  --primary: #7b1230;
+  --primary-dark: #5a0c22;
+  --accent: #ad1a42;
+  --accent-light: #fce8ee;
+  --text: #1c1218;
+  --text-muted: #6b5560;
   --white: #fff;
-  --bg-light: #f4f8fb;
-  --bg-dark: #0d2137;
-  --border: #d5e8f5;
+  --bg-light: #fdf5f7;
+  --bg-dark: #1a0810;
+  --border: #f0d0da;
   --radius: 12px;
-  --shadow: 0 4px 24px rgba(21,67,96,.10);
-  --shadow-hover: 0 8px 32px rgba(21,67,96,.18);
+  --shadow: 0 4px 24px rgba(173,26,66,.10);
+  --shadow-hover: 0 8px 32px rgba(173,26,66,.18);
   --font-main: 'Onest', 'Golos Text', sans-serif;
 }
 
@@ -135,25 +135,37 @@ header { position: sticky; top: 0; z-index: 100; background: var(--white); box-s
 .dropdown {
   display: none;
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + 8px);
   left: 0;
   background: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-hover);
-  min-width: 280px;
+  box-shadow: 0 12px 40px rgba(173,26,66,.15);
+  min-width: 290px;
   z-index: 200;
   padding: 8px 0;
+  animation: dropdownFade .18s ease;
 }
-.has-dropdown:hover .dropdown { display: block; }
+@keyframes dropdownFade {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.has-dropdown:hover .dropdown,
+.has-dropdown:focus-within .dropdown { display: block; }
 .dropdown li a {
   display: block;
-  padding: 10px 18px;
+  padding: 11px 20px;
   font-size: 14px;
   color: var(--text);
-  transition: background .15s, color .15s;
+  transition: background .15s, color .15s, padding-left .15s;
+  border-left: 3px solid transparent;
 }
-.dropdown li a:hover { background: var(--accent-light); color: var(--accent); }
+.dropdown li a:hover {
+  background: var(--accent-light);
+  color: var(--accent);
+  padding-left: 26px;
+  border-left-color: var(--accent);
+}
 
 .burger {
   display: none;
@@ -175,7 +187,7 @@ header { position: sticky; top: 0; z-index: 100; background: var(--white); box-s
 
 /* ===== HERO ===== */
 .hero {
-  background: linear-gradient(135deg, #eaf4fb 0%, #f0f7ff 60%, #d6eaf8 100%);
+  background: linear-gradient(135deg, #fce8ee 0%, #fff5f7 60%, #f9d5e0 100%);
   padding: 72px 0 0;
   overflow: hidden;
 }
@@ -527,16 +539,53 @@ footer hr { border-color: rgba(255,255,255,.15); margin: 16px 0; }
     left: 0;
     right: 0;
     background: var(--white);
-    border-top: 1px solid var(--border);
-    box-shadow: var(--shadow);
-    padding: 16px 0;
-    z-index: 50;
+    border-top: 2px solid var(--accent);
+    box-shadow: 0 8px 32px rgba(173,26,66,.12);
+    padding: 8px 0 20px;
+    z-index: 99;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
   }
   .nav-menu.open { display: block; }
   .nav-menu ul { flex-direction: column; gap: 0; }
-  .nav-menu > ul > li > a { border-radius: 0; padding: 12px 24px; }
-  .dropdown { position: static; box-shadow: none; border: none; padding: 0 0 0 24px; }
+  .nav-menu > ul > li > a {
+    border-radius: 0;
+    padding: 14px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-menu > ul > li > a:hover,
+  .nav-menu > ul > li > a.active {
+    background: var(--accent-light);
+    color: var(--accent);
+    border-left: 3px solid var(--accent);
+  }
+  .dropdown {
+    position: static;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    background: var(--bg-light);
+    animation: none;
+    display: none;
+  }
+  .dropdown li a {
+    padding: 12px 24px 12px 40px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--border);
+    border-left: none;
+  }
+  .dropdown li a:hover {
+    padding-left: 48px;
+    border-left: none;
+  }
   .has-dropdown:hover .dropdown { display: none; }
+  .has-dropdown:focus-within .dropdown { display: none; }
   .has-dropdown.open .dropdown { display: block; }
   .burger { display: flex; }
 
