@@ -109,7 +109,7 @@ header { position: sticky; top: 0; z-index: 100; background: var(--white); box-s
 
 .logo img { height: 48px; width: auto; object-fit: contain; }
 
-.nav-menu ul {
+.nav-menu > ul {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -141,10 +141,11 @@ header { position: sticky; top: 0; z-index: 100; background: var(--white); box-s
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: 0 12px 40px rgba(173,26,66,.15);
-  min-width: 290px;
+  width: 300px;
   z-index: 200;
   padding: 8px 0;
   animation: dropdownFade .18s ease;
+  flex-direction: column;
 }
 @keyframes dropdownFade {
   from { opacity: 0; transform: translateY(-6px); }
@@ -152,11 +153,16 @@ header { position: sticky; top: 0; z-index: 100; background: var(--white); box-s
 }
 .has-dropdown:hover .dropdown,
 .has-dropdown:focus-within .dropdown { display: block; }
+.dropdown li {
+  display: block;
+  width: 100%;
+}
 .dropdown li a {
   display: block;
   padding: 11px 20px;
   font-size: 14px;
   color: var(--text);
+  white-space: normal;
   transition: background .15s, color .15s, padding-left .15s;
   border-left: 3px solid transparent;
 }
