@@ -33,8 +33,8 @@
 
 <section class="page-hero">
   <div class="container">
-    <span class="label">Bize Ulaşın</span>
-    <h1>İletişim</h1>
+    <span class="label">İletişim</span>
+    <h1>Sorularınız, Talepleriniz ve Detaylı Bilgi İçin Bize Ulaşın</h1>
     <p>Projeniz için uzmanlarımızla görüşün, size özel çözüm geliştirelim.</p>
   </div>
 </section>
@@ -50,56 +50,79 @@
       </div>
       <div class="contact-info-card reveal">
         <div class="contact-info-icon">📧</div>
-        <h3>E-posta</h3>
+        <h3>Email</h3>
         <p>info@genexa-cro.com</p>
       </div>
       <div class="contact-info-card reveal">
-        <div class="contact-info-icon">📞</div>
-        <h3>Telefon</h3>
-        <p>Detaylı bilgi için lütfen e-posta ile iletişime geçin.</p>
+        <div class="contact-info-icon">🕐</div>
+        <h3>Çalışma Saatleri</h3>
+        <p>Haftaiçi: 09:00 - 18:00<br>Haftasonu: Kapalı</p>
       </div>
     </div>
 
-    <div class="contact-form-full reveal">
-      <h2>Bize Mesaj Gönderin</h2>
-      <form onsubmit="return false;">
-        <div class="form-row">
-          <div class="form-group"><label>İsim</label><input type="text" placeholder="İsim" required /></div>
-          <div class="form-group"><label>Soyisim</label><input type="text" placeholder="Soyisim" required /></div>
+    <div class="two-col reveal" style="margin-top:64px;align-items:stretch;">
+      <div class="content-text">
+        <span class="label">Sponsor &amp; Araştırmacı Tavsiyesi</span>
+        <h2>Klinik araştırmalar için güvenilir CRO partneriniz.</h2>
+        <p>Start-up'tan kapanışa kadar net görünürlük, GCP/ICH uyumu ve zamanında teslim sunarız. PI ve sponsorlarımız, şeffaf raporlama ve düşük risk için bizi önerir.</p>
+        <div class="content-image" style="margin-top:24px;border-radius:12px;overflow:hidden;">
+          <img src="images/gorsel_2025-11-06_093248950.webp" alt="GENEXA CRO" />
         </div>
-        <div class="form-row">
-          <div class="form-group"><label>Telefon</label><input type="tel" placeholder="Telefon" /></div>
-          <div class="form-group"><label>E-posta</label><input type="email" placeholder="E-posta" required /></div>
-        </div>
-        <div class="form-group full" style="margin-bottom:12px;">
-          <label>Konu</label>
-          <select>
-            <option>Genel Bilgi</option>
-            <option>Hizmet Talebi</option>
-            <option>İş Birliği</option>
-            <option>Diğer</option>
-          </select>
-        </div>
-        <div class="form-group full" style="margin-bottom:16px;">
-          <label>Mesaj</label>
-          <textarea rows="5" placeholder="Mesajınızı yazın..."></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary full-width">
-          <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" style="width:16px;height:16px;fill:currentColor"><path d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"/></svg>
-          Mesaj Gönder
-        </button>
-      </form>
+      </div>
+      <div class="contact-form-full reveal" style="background:var(--bg-light);border-radius:16px;padding:40px;">
+        <h2>Randevu Oluştur</h2>
+        <form onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group"><label>İsim</label><input type="text" placeholder="İsim" required /></div>
+            <div class="form-group"><label>Soyisim</label><input type="text" placeholder="Soyisim" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Telefon</label><input type="tel" placeholder="Telefon" required /></div>
+            <div class="form-group"><label>Email</label><input type="email" placeholder="Email" required /></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Randevu Tarihi</label><input type="date" required /></div>
+            <div class="form-group"><label>Randevu Saati</label><input type="time" required /></div>
+          </div>
+          <div class="form-group full" style="margin-bottom:12px;">
+            <label>Hizmet</label>
+            <select>
+              <option>Study Management &amp; Project Management</option>
+              <option>Regülasyon &amp; Etik Komite Başvuruları</option>
+              <option>Monitoring (CRA) &amp; Quality Assurance (QA)</option>
+              <option>Data Management &amp; Biostatistics</option>
+              <option>Medical Writing</option>
+              <option>Pharmacovigilance (PV)</option>
+            </select>
+          </div>
+          <div class="form-group full" style="margin-bottom:16px;">
+            <label>Mesaj</label>
+            <textarea rows="4" placeholder="Mesajınızı Yazın"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary full-width">
+            📅 Randevu Oluştur
+          </button>
+        </form>
+      </div>
     </div>
 
-    <div class="map-placeholder reveal">
-      🗺️ &nbsp; Harita yakında eklenecek
+    <div class="map-placeholder reveal" style="margin-top:48px;padding:0;overflow:hidden;border-radius:16px;height:400px;">
+      <iframe
+        loading="lazy"
+        src="https://maps.google.com/maps?q=Zafer%20Mah.%20%C5%9Eevketiye%20Cad.%20Garipo%C4%9Flu%20Apt.%20No%3A9%20%C4%B0%C3%A7%20Kap%C4%B1%20No%3A%203%20%C4%B0lkad%C4%B1m%20%2F%20Samsun&t=m&z=14&output=embed&iwloc=near"
+        title="Zafer Mah. Şevketiye Cad. Garipoğlu Apt. No:9 İç Kapı No: 3 İlkadım / Samsun"
+        width="100%"
+        height="400"
+        style="border:0;display:block;"
+        allowfullscreen=""
+      ></iframe>
     </div>
   </div>
 </section>
 
 <footer id="colophon">
   <div class="footer-main"><div class="container footer-grid">
-    <div class="footer-col"><img src="images/gorsel_2025-11-05_171219518.webp" alt="GENEXA CRO" class="footer-logo" /><hr /><h5>Sosyal Medya Hesaplarımız</h5><div class="social-icons"><a href="#" class="social-icon"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a></div></div>
+    <div class="footer-col"><img src="images/gorsel_2025-11-05_171219518.webp" alt="GENEXA CRO" class="footer-logo" /><hr /><h5>Sosyal Medya Hesaplarımız</h5><div class="social-icons"><a href="#" class="social-icon" aria-label="LinkedIn"><svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a><a href="#" class="social-icon" aria-label="Twitter"><svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg></a><a href="#" class="social-icon" aria-label="YouTube"><svg viewBox="0 0 576 512" xmlns="http://www.w3.org/2000/svg"><path d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg></a></div></div>
     <div class="footer-col"><h5>Sayfalar</h5><ul class="footer-links"><li><a href="index.html">Anasayfa</a></li><li><a href="hakkimizda.html">Hakkımızda</a></li><li><a href="hizmetler.html">Hizmetler</a></li><li><a href="blog.html">Blog</a></li><li><a href="iletisim.html">İletişim</a></li></ul></div>
     <div class="footer-col"><h5>Hizmetler</h5><ul class="footer-links"><li><a href="study-management-project-management.html">Study Management &amp; Project Management</a></li><li><a href="regulasyon-etik-komite-basvurulari.html">Regülasyon &amp; Etik Komite Başvuruları</a></li><li><a href="monitoring-cra-quality-assurance-qa.html">Monitoring (CRA) &amp; Quality Assurance (QA)</a></li><li><a href="data-management-biostatistics.html">Data Management &amp; Biostatistics</a></li><li><a href="medical-writing.html">Medical Writing</a></li><li><a href="pharmacovigilance-pv.html">Pharmacovigilance (PV)</a></li></ul></div>
     <div class="footer-col"><h4>Yeniliklerden Haberdar Olun!</h4><p>Bültenimize katılarak yeniliklerden ilk siz haberdar olun.</p><form class="newsletter-form" onsubmit="return false;"><input type="email" placeholder="Email" required /><button type="submit">Katıl</button></form></div>
