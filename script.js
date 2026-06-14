@@ -1,12 +1,24 @@
-// Mobile burger menu
+// ===== SCROLL REVEAL =====
+function initReveal() {
+  const els = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => observer.observe(el));
+}
+
+// ===== MOBILE BURGER =====
 const burger = document.getElementById('burger');
 const navMenu = document.getElementById('navMenu');
-
 burger?.addEventListener('click', () => {
   navMenu.classList.toggle('open');
+  burger.classList.toggle('active');
 });
-
-// Mobile dropdown toggle
 document.querySelectorAll('.has-dropdown > a').forEach(link => {
   link.addEventListener('click', e => {
     if (window.innerWidth <= 768) {
@@ -15,8 +27,14 @@ document.querySelectorAll('.has-dropdown > a').forEach(link => {
     }
   });
 });
+document.addEventListener('click', e => {
+  if (!e.target.closest('#navMenu') && !e.target.closest('#burger')) {
+    navMenu?.classList.remove('open');
+    burger?.classList.remove('active');
+  }
+});
 
-// Tabs
+// ===== TABS =====
 document.querySelectorAll('.tab-btn').forEach(btn => {
   btn.addEventListener('click', () => {
     const tab = btn.dataset.tab;
@@ -27,7 +45,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
-// Counter animation
+// ===== COUNTER ANIMATION =====
 function animateCounters() {
   document.querySelectorAll('.count').forEach(el => {
     const target = parseInt(el.dataset.target);
@@ -41,24 +59,14 @@ function animateCounters() {
     }, 16);
   });
 }
-
-// Trigger counters when section visible
 const countersSection = document.querySelector('.counters');
 if (countersSection) {
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounters();
-        observer.disconnect();
-      }
+      if (entry.isIntersecting) { animateCounters(); observer.disconnect(); }
     });
   }, { threshold: 0.3 });
   observer.observe(countersSection);
 }
 
-// Close mobile menu when clicking outside
-document.addEventListener('click', e => {
-  if (!e.target.closest('#navMenu') && !e.target.closest('#burger')) {
-    navMenu?.classList.remove('open');
-  }
-});
+document.addEventListener('DOMContentLoaded', initReveal);
