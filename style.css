@@ -732,3 +732,43 @@ footer hr { border-color: rgba(255,255,255,.15); margin: 16px 0; }
   .header-inner { height: 60px; }
   .logo img { height: 32px; }
 }
+
+/* ===== TEAM GRID (alias) ===== */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+}
+.team-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  transition: box-shadow .2s, transform .2s;
+}
+.team-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.team-icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 16px;
+  font-size: 28px;
+}
+.team-card h3 { font-size: 17px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+.team-card p { font-size: 14px; color: var(--text-muted); }
+
+/* ===== SERVICE CARD BODY (hizmetler page) ===== */
+.service-card-img { height: 160px; display: flex; align-items: center; justify-content: center; background: var(--bg-light); overflow: hidden; }
+.service-card-img img { width: 100%; height: 100%; object-fit: cover; }
+.service-card-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+.service-card-body h3 { font-size: 16px; font-weight: 700; color: var(--primary); margin-bottom: 10px; line-height: 1.4; }
+.service-card-body p { font-size: 14px; color: var(--text-muted); line-height: 1.6; flex: 1; margin-bottom: 16px; }
+.btn-outline { display: inline-flex; align-items: center; padding: 9px 20px; border: 2px solid var(--accent); border-radius: 8px; color: var(--accent); font-weight: 600; font-size: 14px; transition: all .2s; }
+.btn-outline:hover { background: var(--accent); color: var(--white); }
+
+@media (max-width: 768px) {
+  .team-grid { grid-template-columns: 1fr; }
+}
